@@ -17,9 +17,10 @@ maxiter = 100
 z = numpy.linspace(0,7,200)
 
 CC = (AA+BB)/2.0
-iter = 1
+iter = 0
 
 while (BB-AA)/2.0>tol and iter<maxiter:
+      iter += 1
       Ainit=[0., 0., CC]
       Aprime = integrate.odeint(Blasius,Ainit,z)
       ODEC = 1-Aprime[-1,1]
@@ -37,7 +38,7 @@ while (BB-AA)/2.0>tol and iter<maxiter:
            AA = CC
       
       CC = (AA+BB)/2.0
-      iter = iter+1
+
 
 print("iterations needed=",iter)
 print("best initial value=",CC)	 
