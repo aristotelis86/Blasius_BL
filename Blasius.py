@@ -51,11 +51,11 @@ while (BB-AA)/2.0>tol and iter<maxiter:
       # Next guess of the value of the unknown IC
       CC = (AA+BB)/2.0
 
-# Information output
+# Information output from iterations
 print("Iterations needed = ",iter)
 print("Best guess for initial condition f''(0) = ",CC)
 
-
+# Output of required values
 for ij in range(7):
     idx = (numpy.abs(z - ij)).argmin()
     print("At z = ",ij,"    u/U =  ",Aprime[idx,1])
